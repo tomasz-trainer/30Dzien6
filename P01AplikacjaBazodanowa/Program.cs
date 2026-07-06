@@ -25,13 +25,19 @@ namespace P01AplikacjaBazodanowa
             sqlDataReader = command.ExecuteReader();
 
             //teraz musimy przeczytac wynik 
-            sqlDataReader.Read(); // czytamy kolejny wiersz
-            string wynik = (string)sqlDataReader.GetValue(2);// pobierz wartosc z pierwszego wiersza i kolumny o indeksie 2 
-            Console.WriteLine(wynik);
+            //sqlDataReader.Read(); // czytamy kolejny wiersz
+            //string wynik = (string)sqlDataReader.GetValue(2);// pobierz wartosc z pierwszego wiersza i kolumny o indeksie 2 
+            //Console.WriteLine(wynik);
 
-            sqlDataReader.Read(); // czytamy kolejny wiersz 
-            wynik = (string)sqlDataReader.GetValue(2); // pobierz wartosc z kolejnego wiersza i kolumny o indeksie 2 
-            Console.WriteLine(wynik);
+            //sqlDataReader.Read(); // czytamy kolejny wiersz 
+            //wynik = (string)sqlDataReader.GetValue(2); // pobierz wartosc z kolejnego wiersza i kolumny o indeksie 2 
+            //Console.WriteLine(wynik);
+
+            while (sqlDataReader.Read())
+            {
+                string wynik = (string)sqlDataReader.GetValue(2) + " " + (string)sqlDataReader.GetValue(3);
+                Console.WriteLine(wynik);
+            }
 
 
             connection.Close();
