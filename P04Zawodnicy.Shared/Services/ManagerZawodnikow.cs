@@ -92,6 +92,9 @@ namespace P04Zawodnicy.Shared.Services
          
         //}
 
+         // podataność na atak SQL injection
+         // np: podczas podawania kraju podać:
+         // POL','20240101',1,1); drop table zawodnicy--
         public void Dodaj(Zawodnik zawodnik)
         {
              
@@ -130,3 +133,8 @@ namespace P04Zawodnicy.Shared.Services
       
     }
 }
+
+// komunikacja z bazą danych może przebiegac na 3 sposoby :
+//1) Polecenia SQL , parametryzacja zapytań
+//2) procedury wbudowane 
+//3) ORM (object-relation-mapping) 

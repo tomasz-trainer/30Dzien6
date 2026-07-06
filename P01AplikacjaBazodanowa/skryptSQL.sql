@@ -37,7 +37,7 @@ INSERT INTO Zawodnicy (Id_trenera, Imie, Nazwisko, Kraj, Data_ur, Wzrost, Waga) 
 (3, N'Tommy', N'INGEBRIGTSEN', 'NOR', '1977-08-08', 179, 56),
 (3, N'Bjoern-Einar', N'ROMOEREN', 'NOR', '1981-04-01', 182, 63),
 (3, N'Roar', N'LJOEKELSOEY', 'NOR', '1976-05-31', 175, 62),
-(0, N'Alan', N'ALBORN', 'USA', '1980-12-13', 177, 57),
+(null, N'Alan', N'ALBORN', 'USA', '1980-12-13', 177, 57),
 (4, N'Adam', N'MAŁYSZ', 'POL', '1977-12-03', 169, 60);
 
 
@@ -47,3 +47,30 @@ alter table Zawodnicy
 alter column Id_trenera INT NULL
 
 update zawodnicy set id_trenera = null where id_trenera=0
+
+
+select distinct kraj from zawodnicy
+
+
+select id_zawodnika, id_trenera, imie, nazwisko, kraj, data_ur, wzrost,waga from zawodnicy where kraj='pol'
+
+select avg(wzrost*1.0) from zawodnicy where kraj ='pol'
+
+
+
+insert into zawodnicy (id_trenera,imie, nazwisko,kraj,data_ur,wzrost,waga) values (null,'adam','kowalski','pol','20260706',20,3)
+
+ 
+
+ select avg(year(getdate())- year(data_ur)) from zawodnicy 
+ where kraj = 'pol'
+
+ go
+ create procedure SredniWiekZawodnikow
+      @Kraj varchar(3),
+	  @SredniWiek INT OUTPUT
+	as
+	begin
+		 select avg(year(getdate())- year(data_ur)) from zawodnicy 
+		  where kraj = @Kraj
+	end
