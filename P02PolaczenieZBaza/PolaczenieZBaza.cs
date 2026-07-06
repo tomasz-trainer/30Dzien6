@@ -62,7 +62,7 @@ namespace P02PolaczenieZBaza
 
         }
 
-        public (object[] naglowki, object[][] wynik) WyslijPolecenieSQLPlusNaglowki(string sql)
+        public (string[] naglowki, object[][] wynik) WyslijPolecenieSQLPlusNaglowki(string sql)
         {
             SqlConnection connection;// nawiazywanie polaczenia z baza 
             SqlCommand command; // przechowywanie polecen SQL 

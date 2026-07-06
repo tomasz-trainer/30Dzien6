@@ -24,9 +24,12 @@ namespace P05KontrolkaDataGridView
 
             PolaczenieZBaza pzb= new PolaczenieZBaza();
 
-           object[][] wynik= pzb.WyslijPolecenieSQL("select * from zawodnicy");
+            (string[] naglowki, object[][] wynik) =pzb.WyslijPolecenieSQLPlusNaglowki(txtPolecenieSQL.Text);
 
             dgvDane.ColumnCount = wynik[0].Length;
+
+            for (int i = 0; i < naglowki.Length; i++)
+                dgvDane.Columns[i].HeaderText = naglowki[i];
 
             foreach (var wiersz in wynik)
                 dgvDane.Rows.Add(wiersz);

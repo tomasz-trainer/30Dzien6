@@ -30,6 +30,8 @@
         {
             this.dgvDane = new System.Windows.Forms.DataGridView();
             this.btnWyslij = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPolecenieSQL = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDane)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,17 +53,36 @@
             this.btnWyslij.UseVisualStyleBackColor = true;
             this.btnWyslij.Click += new System.EventHandler(this.btnWyslij_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Polecenie SQL";
+            // 
+            // txtPolecenieSQL
+            // 
+            this.txtPolecenieSQL.Location = new System.Drawing.Point(94, 47);
+            this.txtPolecenieSQL.Name = "txtPolecenieSQL";
+            this.txtPolecenieSQL.Size = new System.Drawing.Size(613, 20);
+            this.txtPolecenieSQL.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 454);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPolecenieSQL);
             this.Controls.Add(this.btnWyslij);
             this.Controls.Add(this.dgvDane);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDane)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -69,6 +90,8 @@
 
         private System.Windows.Forms.DataGridView dgvDane;
         private System.Windows.Forms.Button btnWyslij;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPolecenieSQL;
     }
 }
 
