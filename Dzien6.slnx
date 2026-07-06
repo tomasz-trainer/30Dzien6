@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="PracaDomowa.txt" />
+  </Folder>
   <Project Path="P01AplikacjaBazodanowa/P01AplikacjaBazodanowa.csproj" />
   <Project Path="P02PolaczenieZBaza/P02PolaczenieZBaza.csproj" />
   <Project Path="P03AplikacjaBazodanowaZawodnicy/P03AplikacjaBazodanowaZawodnicy.csproj" />
