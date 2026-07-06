@@ -41,9 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\ManagerZawodnikowLocal.cs" />
     <Compile Include="Services\ManagerZawodnikow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Zawodnik.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\P02PolaczenieZBaza\P02PolaczenieZBaza.csproj">
+      <Project>{3388558b-a681-4d70-8727-6f39dab88ec9}</Project>
+      <Name>P02PolaczenieZBaza</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

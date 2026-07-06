@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace P02PolaczenieZBaza
 {
-    internal class PolaczenieZBaza
+    public class PolaczenieZBaza
     {
         private readonly string connectionString;
 
