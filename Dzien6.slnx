@@ -3,4 +3,5 @@
   <Project Path="P02PolaczenieZBaza/P02PolaczenieZBaza.csproj" />
   <Project Path="P03AplikacjaBazodanowaZawodnicy/P03AplikacjaBazodanowaZawodnicy.csproj" />
   <Project Path="P04Zawodnicy.Shared/P04Zawodnicy.Shared.csproj" />
+  <Project Path="P05KontrolkaDataGridView/P05KontrolkaDataGridView.csproj" />
 </Solution>
