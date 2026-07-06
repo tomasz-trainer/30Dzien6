@@ -10,6 +10,11 @@ namespace P02PolaczenieZBaza
     {
         static void Main(string[] args)
         {
+            PolaczenieZBaza pzb = new PolaczenieZBaza();
+            object[][] wynik = pzb.WyslijPolecenieSQL("select * from zawodnicy");
+
+            foreach (object[] wiersz in wynik)
+                Console.WriteLine(string.Join(" ", wiersz));
         }
     }
 }

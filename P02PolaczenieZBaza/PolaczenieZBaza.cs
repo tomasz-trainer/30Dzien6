@@ -29,7 +29,7 @@ namespace P02PolaczenieZBaza
              
             connection = new SqlConnection(connectionString);
 
-            command = new SqlCommand("select * from Zawodnicy", connection);
+            command = new SqlCommand(sql, connection);
 
             connection.Open();
 
