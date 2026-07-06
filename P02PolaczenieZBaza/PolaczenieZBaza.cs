@@ -11,6 +11,14 @@ namespace P02PolaczenieZBaza
     {
         private readonly string connectionString;
 
+        public string ConnectionString
+        {
+            get
+            {
+                return connectionString;
+            }
+        }
+
         public PolaczenieZBaza()
         {
             connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=BazaSportowa;Integrated Security=True";

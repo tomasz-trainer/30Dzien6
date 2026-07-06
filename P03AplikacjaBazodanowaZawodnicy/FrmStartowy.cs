@@ -79,5 +79,12 @@ namespace P03AplikacjaBazodanowaZawodnicy
                 pm.WygenerujPDF(zawodnicy);
             }
         }
+
+        private void btnSredniWiek_Click(object sender, EventArgs e)
+        {
+            string wybranyKraj = cbKraje.SelectedItem.ToString();
+            int sredniWiek = mz.PodajSredniWiekZawodnikow(wybranyKraj);
+            MessageBox.Show($"Średni wiek zawodnikow z kraju {wybranyKraj}: {sredniWiek}");
+        }
     }
 }

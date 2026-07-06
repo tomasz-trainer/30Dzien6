@@ -71,6 +71,8 @@ insert into zawodnicy (id_trenera,imie, nazwisko,kraj,data_ur,wzrost,waga) value
 	  @SredniWiek INT OUTPUT
 	as
 	begin
-		 select avg(year(getdate())- year(data_ur)) from zawodnicy 
+		 select @SredniWiek = avg(year(getdate())- year(data_ur)) from zawodnicy 
 		  where kraj = @Kraj
 	end
+
+	drop procedure SredniWiekZawodnikow

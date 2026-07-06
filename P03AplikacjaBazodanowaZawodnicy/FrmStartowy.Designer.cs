@@ -34,6 +34,7 @@
             this.btnNowy = new System.Windows.Forms.Button();
             this.btnOdswiez = new System.Windows.Forms.Button();
             this.btnGenerujPDF = new System.Windows.Forms.Button();
+            this.btnSredniWiek = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDane
@@ -93,11 +94,22 @@
             this.btnGenerujPDF.UseVisualStyleBackColor = true;
             this.btnGenerujPDF.Click += new System.EventHandler(this.btnGenerujPDF_Click);
             // 
+            // btnSredniWiek
+            // 
+            this.btnSredniWiek.Location = new System.Drawing.Point(296, 172);
+            this.btnSredniWiek.Name = "btnSredniWiek";
+            this.btnSredniWiek.Size = new System.Drawing.Size(75, 23);
+            this.btnSredniWiek.TabIndex = 13;
+            this.btnSredniWiek.Text = "Średni Wiek";
+            this.btnSredniWiek.UseVisualStyleBackColor = true;
+            this.btnSredniWiek.Click += new System.EventHandler(this.btnSredniWiek_Click);
+            // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 262);
+            this.Controls.Add(this.btnSredniWiek);
             this.Controls.Add(this.btnGenerujPDF);
             this.Controls.Add(this.btnOdswiez);
             this.Controls.Add(this.btnNowy);
@@ -118,6 +130,7 @@
         private System.Windows.Forms.Button btnNowy;
         private System.Windows.Forms.Button btnOdswiez;
         private System.Windows.Forms.Button btnGenerujPDF;
+        private System.Windows.Forms.Button btnSredniWiek;
     }
 }
 
