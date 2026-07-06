@@ -103,7 +103,7 @@ namespace P03AplikacjaBazodanowaZawodnicy
 
         private void DodajZawodnika()
         {
-            Zawodnik zawodnik = new Zawodnik();
+            zawodnik = new Zawodnik();
             zczytajDaneZFormularza(zawodnik);
             mz.Dodaj(zawodnik);
         }
