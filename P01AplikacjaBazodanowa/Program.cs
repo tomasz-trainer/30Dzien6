@@ -18,9 +18,25 @@ namespace P01AplikacjaBazodanowa
             string connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=BazaSportowa;Integrated Security=True";
             connection = new SqlConnection(connectionString);
           
-            command = new SqlCommand("select * from zawodnicy", connection);
+            command = new SqlCommand("select * from Zawodnicy", connection);
+
+            connection.Open();
+
+            sqlDataReader = command.ExecuteReader();
+
+            //teraz musimy przeczytac wynik 
+            sqlDataReader.Read(); // czytamy kolejny wiersz
+            string wynik = (string)sqlDataReader.GetValue(2);// pobierz wartosc z pierwszego wiersza i kolumny o indeksie 2 
+            Console.WriteLine(wynik);
+
+            sqlDataReader.Read(); // czytamy kolejny wiersz 
+            wynik = (string)sqlDataReader.GetValue(2); // pobierz wartosc z kolejnego wiersza i kolumny o indeksie 2 
+            Console.WriteLine(wynik);
 
 
+            connection.Close();
+
+            Console.ReadKey();
         }
     }
 }
