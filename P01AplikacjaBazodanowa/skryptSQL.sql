@@ -1,7 +1,7 @@
 
 CREATE TABLE Zawodnicy (
     Id_zawodnika INT NOT NULL PRIMARY KEY identity(1,1),
-    Id_trenera INT NOT NULL,
+    Id_trenera INT NULL,
     Imie NVARCHAR(255) NOT NULL,
     Nazwisko NVARCHAR(255) NOT NULL,
     Kraj CHAR(3) NOT NULL,
@@ -10,10 +10,12 @@ CREATE TABLE Zawodnicy (
     Waga INT NOT NULL
 );
 
+
+
 drop table Zawodnicy
 
 
-select * from Zawodnicy
+select * from Zawodnicy order by wzrost
 
 
 insert into zawodnicy values (4,'marcin','bachleda'...)+
@@ -37,3 +39,11 @@ INSERT INTO Zawodnicy (Id_trenera, Imie, Nazwisko, Kraj, Data_ur, Wzrost, Waga) 
 (3, N'Roar', N'LJOEKELSOEY', 'NOR', '1976-05-31', 175, 62),
 (0, N'Alan', N'ALBORN', 'USA', '1980-12-13', 177, 57),
 (4, N'Adam', N'MAŁYSZ', 'POL', '1977-12-03', 169, 60);
+
+
+select imie from zawodnicy where Id_zawodnika = 1
+
+alter table Zawodnicy 
+alter column Id_trenera INT NULL
+
+update zawodnicy set id_trenera = null where id_trenera=0
