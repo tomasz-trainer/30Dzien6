@@ -20,7 +20,7 @@ namespace P04Zawodnicy.Shared.Services
 
 
 
-        public Zawodnik[] WczytajZawodnikow(string sciezka)
+        public Zawodnik[] WczytajZawodnikow()
         {
            object[][] dane =  pzb.WyslijPolecenieSQL("select id_zawodnika, id_trenera, imie, nazwisko, kraj, data_ur, wzrost,waga from zawodnicy");
 
@@ -40,7 +40,7 @@ namespace P04Zawodnicy.Shared.Services
 
                 if (w[1] != DBNull.Value)
                     z.Id_trenera = (int)w[1];
-
+ 
                 z.Imie = (string)w[2];
                 z.Nazwisko = (string)w[3];
                 z.Kraj = (string)w[4];
@@ -86,11 +86,11 @@ namespace P04Zawodnicy.Shared.Services
             return (double)dane[0][0];
         }
 
-        //sortowanie bąbelkowe (ang. Bubble Sort).
-        public void PosorotujZawodnikowPoNazwisku(Zawodnik[] posortowaniZawodnicy)
-        {
+        ////sortowanie bąbelkowe (ang. Bubble Sort).
+        //public void PosorotujZawodnikowPoNazwisku(Zawodnik[] posortowaniZawodnicy)
+        //{
          
-        }
+        //}
 
         public void Dodaj(Zawodnik zawodnik)
         {

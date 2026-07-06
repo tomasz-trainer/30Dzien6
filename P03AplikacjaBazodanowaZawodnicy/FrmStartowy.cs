@@ -16,7 +16,7 @@ namespace P03AplikacjaBazodanowaZawodnicy
             mz = new ManagerZawodnikow();
             
             lbDane.DataSource = 
-                mz.WczytajZawodnikow(@"C:\dane\Zawodnicy.txt");
+                mz.WczytajZawodnikow();
            
             cbKraje.DataSource = mz.PodajKraje();
 
