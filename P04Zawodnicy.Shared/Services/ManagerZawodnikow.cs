@@ -61,19 +61,29 @@ namespace P04Zawodnicy.Shared.Services
 
         public Zawodnik[] PodajZawodnikow(string kraj)
         {
-            throw new NotImplementedException();
+            object[][] dane = pzb.WyslijPolecenieSQL($"select id_zawodnika, id_trenera, imie, nazwisko, kraj, data_ur, wzrost,waga from zawodnicy where kraj='{kraj}'");
+
+            mapujZawodnikow(dane, out Zawodnik[] zawodnicy);
+            return zawodnicy;
         }
 
 
         public string[] PodajKraje()
         {
-            throw new NotImplementedException();
+           object[][] dane = pzb.WyslijPolecenieSQL("select distinct kraj from zawodnicy");
+
+            string[] kraje = new string[dane.Length];
+            for (int i = 0; i < dane.Length; i++)
+                kraje[i] = (string)dane[i][0];
+
+            return kraje;
         }
 
 
         public double PodajSredniWzrost(string kraj)
         {
-            throw new NotImplementedException();
+            object[][] dane = pzb.WyslijPolecenieSQL($"select avg(wzrost*1.0) from zawodnicy where kraj = '{kraj}'");
+            return (double)dane[0][0];
         }
 
         //sortowanie bąbelkowe (ang. Bubble Sort).
@@ -84,28 +94,39 @@ namespace P04Zawodnicy.Shared.Services
 
         public void Dodaj(Zawodnik zawodnik)
         {
-           
+             
+            string szablon = "insert into zawodnicy (id_trenera,imie, nazwisko,kraj,data_ur,wzrost,waga) values ({0},'{1}','{2}','{3}','{4}',{5},{6})";
+            string sql = string.Format(szablon,
+                zawodnik.Id_trenera == null ? "null" : zawodnik.Id_trenera.ToString(),
+                zawodnik.Imie, zawodnik.Nazwisko, zawodnik.Kraj,
+                zawodnik.DataUrodzenia.ToString("yyyyMMdd"),
+                zawodnik.Wzrost, zawodnik.Waga
+                );
+
+            pzb.WyslijPolecenieSQL(sql);
+
         }
 
         public void Usun(Zawodnik zawodnik)
         {
-            
+            pzb.WyslijPolecenieSQL($"delete zawodnicy where id_zawodnika = {zawodnik.Id_zawodnika}");
         }
 
-        public void Edytuj(Zawodnik zawodnik)
+        public void Edytuj(Zawodnik edytowany)
         {
-            
+            string sql = $@"update zawodnicy set 
+                id_trenera = {(edytowany.Id_trenera == null ? "null" : edytowany.Id_trenera.ToString())},
+                imie = '{edytowany.Imie}', 
+                nazwisko= '{edytowany.Nazwisko}',
+                kraj='{edytowany.Kraj}',
+                data_ur='{edytowany.DataUrodzenia.ToString("yyyyMMdd")}',
+                wzrost ={edytowany.Wzrost}, 
+                waga ={edytowany.Waga}
+                where id_zawodnika ={edytowany.Id_zawodnika}";
+
+            pzb.WyslijPolecenieSQL(sql);
         }
 
-        private Zawodnik wyszukajZawodnika(Zawodnik zawodnik)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        private void zapisz()
-        {
-            
-        }
+      
     }
 }
